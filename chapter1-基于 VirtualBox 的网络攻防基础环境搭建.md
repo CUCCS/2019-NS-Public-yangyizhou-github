@@ -63,33 +63,33 @@ Xp可以直接在网络连接-ipv4设置中直接修改；
 
 Debian需要输入`su -`登录root用户后，修改/etc/network/interfaces配置文件，Gateway配置如下
 
-<img src="/9.png" alt="9" style="zoom:75%;" />
+![9](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/9.png)
 
 网络配置完成如下
 
 - Gateway
 
-<img src="/gateway.png" style="zoom: 80%;" />
+![gateway](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/gateway.png)
 
 - Attacker
 
-<img src="/attacker.png" alt="attacker" style="zoom:80%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/attacker.png)
 
 - Victim-KALI-1
 
-<img src="/kali-v-1.png" alt="kali-v-1" style="zoom:80%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/kali-v-1.png)
 
 - Victim-XP-1
 
-<img src="/xp32-v-1.png" alt="xp32-v-1" style="zoom:80%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/xp32-v-1.png)
 
 - Victim-XP-2
 
-<img src="/xp-v-2.png" alt="xp-v-2" style="zoom:80%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/xp-v-2.png)
 
 - Victim-Debian-2
 
-<img src="/debian-v-2.png" alt="debian-v-2" style="zoom:80%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/debian-v-2.png)
 
 ### 三、开启路由转发功能
 
@@ -103,11 +103,11 @@ Debian需要输入`su -`登录root用户后，修改/etc/network/interfaces配�
 
 输入命令`iptables -t nat -L`查看规则
 
-<img src="/iptables.png" alt="iptables" style="zoom:80%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/iptables.png)
 
 查看靶机，成功上网
 
-<img src="/8.png" alt="8" style="zoom:80%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/8.png)
 
 **设置iptables规则开机自动加载**
 
@@ -117,19 +117,19 @@ Debian需要输入`su -`登录root用户后，修改/etc/network/interfaces配�
 
 - 靶机可以直接访问攻击者主机√
 
-  <img src="/10.png" alt="10" style="zoom:75%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/10.png)
 
 - 攻击者主机无法直接访问靶机√
 
-  <img src="/11.png" alt="11" style="zoom:75%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/11.png)
 
 - 网关可以直接访问攻击者主机和靶机√
 
-  <img src="/12.png" alt="12" style="zoom:75%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/12.png)
 
 - 靶机的所有对外上下行流量必须经过网关√
 
-  <img src="/13.png" alt="13" style="zoom:75%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/13.png)
 
 - 所有节点均可以访问互联网√
 
@@ -145,7 +145,7 @@ Debian需要输入`su -`登录root用户后，修改/etc/network/interfaces配�
 
 解决方法：输入`su -`命令登入root用户，再输入`adduser <username> sudo`将用户添加到sudo组中。
 
-![1](/1.png)
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/1.png)
 
 **XP在出现ip冲突后无法ping通**。
 
@@ -153,25 +153,25 @@ Debian需要输入`su -`登录root用户后，修改/etc/network/interfaces配�
 
 **Debian配置网卡启动失败，提示`cannot find device eth0`。**
 
-![](/2.png)
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/2.png)
 
 解决方法：使用`nmcli d`命令查看网卡名称，更改配置文件，启动成功。
 
 **Debian重启机器后，网络连接失败，提示“有线 未托管”。使用命令`nmcli d`查看显示state为未托管。**
 
-![](/3.png)
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/3.png)
 
-![4](/4.png)
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/4.png)
 
 解决方法：修改/etc/NetworkManager/NetworkManager.conf配置文件，修改`managed=false`为`managed=true`。
 
 **Debian网络配置完成后，连接图标显示为"?"，除了"enp0s3"外有一个连接为"Wired connection1"，我左键点击"Wired connection1"后就会断开连接，并且显示无网络可选连接，使用命令`nmcli d`查看显示state为连接中。**
 
-<img src="/5.png" style="zoom: 67%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/5.png)
 
-<img src="/7.png" alt="7" style="zoom: 67%;" />
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/7.png)
 
-![6](/6.png)
+![](https://github.com/CUCCS/2019-NS-Public-yangyizhou-github/blob/chap0x01/chapter1/6.png)
 
 未解决：重启网卡。不点击，就不断开。
 
