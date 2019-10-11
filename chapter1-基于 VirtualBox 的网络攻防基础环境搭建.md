@@ -63,33 +63,33 @@ Xp可以直接在网络连接-ipv4设置中直接修改；
 
 Debian需要输入`su -`登录root用户后，修改/etc/network/interfaces配置文件，Gateway配置如下
 
-![9](/9.png)
+![9](chapter1/9.png)
 
 网络配置完成如下
 
 - Gateway
 
-![gateway](/gateway.png)
+![gateway](chapter1/gateway.png)
 
 - Attacker
 
-![](/attacker.png)
+![](chapter1/attacker.png)
 
 - Victim-KALI-1
 
-![kali-v-1](/kali-v-1.png)
+![kali-v-1](chapter1/kali-v-1.png)
 
 - Victim-XP-1
 
-![xp32-v-1](/xp32-v-1.png)
+![xp32-v-1](chapter1/xp32-v-1.png)
 
 - Victim-XP-2
 
-![xp-v-2](/xp-v-2.png)
+![xp-v-2](chapter1/xp-v-2.png)
 
 - Victim-Debian-2
 
-![debian-v-2](/debian-v-2.png)
+![debian-v-2](chapter1/debian-v-2.png)
 
 ### 三、开启路由转发功能
 
@@ -103,11 +103,11 @@ Debian需要输入`su -`登录root用户后，修改/etc/network/interfaces配�
 
 输入命令`iptables -t nat -L`查看规则
 
-![iptables](/iptables.png)
+![iptables](chapter1/iptables.png)
 
 查看靶机，成功上网
 
-![8](/8.png)
+![8](chapter1/8.png)
 
 **设置iptables规则开机自动加载**
 
@@ -117,19 +117,19 @@ Debian需要输入`su -`登录root用户后，修改/etc/network/interfaces配�
 
 - 靶机可以直接访问攻击者主机√
 
-  ![10](/10.png)
+  ![10](chapter1/10.png)
 
 - 攻击者主机无法直接访问靶机√
 
-  ![11](/11.png)
+  ![11](chapter1/11.png)
 
 - 网关可以直接访问攻击者主机和靶机√
 
-  ![12](/12.png)
+  ![12](chapter1/12.png)
 
 - 靶机的所有对外上下行流量必须经过网关√
 
-  ![13](/13.png)
+  ![13](chapter1/13.png)
 
 - 所有节点均可以访问互联网√
 
@@ -145,7 +145,7 @@ Debian需要输入`su -`登录root用户后，修改/etc/network/interfaces配�
 
 解决方法：输入`su -`命令登入root用户，再输入`adduser <username> sudo`将用户添加到sudo组中。
 
-![1](/1.png)
+![1](chapter1/1.png)
 
 **XP在出现ip冲突后无法ping通**。
 
@@ -153,25 +153,25 @@ Debian需要输入`su -`登录root用户后，修改/etc/network/interfaces配�
 
 **Debian配置网卡启动失败，提示`cannot find device eth0`。**
 
-![](/2.png)
+![](chapter1/2.png)
 
 解决方法：使用`nmcli d`命令查看网卡名称，更改配置文件，启动成功。
 
 **Debian重启机器后，网络连接失败，提示“有线 未托管”。使用命令`nmcli d`查看显示state为未托管。**
 
-![](/3.png)
+![](chapter1/3.png)
 
-![4](/4.png)
+![4](chapter1/4.png)
 
 解决方法：修改/etc/NetworkManager/NetworkManager.conf配置文件，修改`managed=false`为`managed=true`。
 
 **Debian网络配置完成后，连接图标显示为"?"，除了"enp0s3"外有一个连接为"Wired connection1"，我左键点击"Wired connection1"后就会断开连接，并且显示无网络可选连接，使用命令`nmcli d`查看显示state为连接中。**
 
-![5](/5.png)
+![5](chapter1/5.png)
 
-![7](/7.png)
+![7](chapter1/7.png)
 
-![6](/6.png)
+![6](chapter1/6.png)
 
 未解决：重启网卡。不点击，就不断开。
 
