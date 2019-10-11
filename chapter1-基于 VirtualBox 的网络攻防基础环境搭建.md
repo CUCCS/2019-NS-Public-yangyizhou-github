@@ -63,7 +63,7 @@ Xp可以直接在网络连接-ipv4设置中直接修改；
 
 Debian需要输入`su -`登录root用户后，修改/etc/network/interfaces配置文件，Gateway配置如下
 
-![9](/9.png)
+![9](chapter1/9.png)
 
 网络配置完成如下
 
