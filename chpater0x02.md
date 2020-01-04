@@ -529,7 +529,6 @@
 - [第五章 网络扫描](https://c4pr1c3.github.io/cuc-ns/chap0x05/main.html)
 - [iptables详解及一些常用规则](https://www.jianshu.com/p/ee4ee15d3658)
 - [编程实现并讲解TCP connect scan/TCP stealth scan/TCP XMAS scan/UDP scan](https://blog.csdn.net/jackcily/article/details/83117884)
-- [DXY0411同学的实验作业](https://github.com/CUCCS/2019-NS-Public-DXY0411)
 
 
 
